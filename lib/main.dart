@@ -42,11 +42,11 @@ class _BottomNavigationBarExampleState
       body: PageView(
         children: currentTab,
         controller: pageController,
-        // onPageChanged: (int index) {
-        //   setState(() {
-        //     currentIndex = index;
-        //   });
-        // },
+        onPageChanged: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
       ),
       // body: PageStorage(
       //   bucket: _bucket,
@@ -55,13 +55,13 @@ class _BottomNavigationBarExampleState
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.cyan[50],
         currentIndex: currentIndex,
-        // onTap: (index) {
-        //   setState(() {
-        //     currentIndex = index;
-        //     pageController.animateToPage(index,
-        //         duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-        //   });
-        // },
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+            pageController.animateToPage(index,
+                duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+          });
+        },
         items: [
           BottomNavigationBarItem(
             label: 'Home',
